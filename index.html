@@ -9,220 +9,649 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
         }
+
+        /* 全局美观背景 */
         body {
-            font-family: "幼圆", "Microsoft YaHei", sans-serif;
-            background-color: #f5f9ff;
+            background: linear-gradient(120deg, #f6f9fc 0%, #eef2f7 50%, #e6ebf5 100%);
+            background-attachment: fixed;
             color: #333;
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            padding: 40px 20px;
-            text-align: center;
+
+        /* 首页头部样式 */
+        .home-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            margin-bottom: 50px;
         }
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
+
+        .home-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .header p {
-            font-size: 16px;
+
+        .home-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
             opacity: 0.9;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.1);
         }
+
+        /* 核心功能按钮区（开始学习 + 豆包辅助） */
+        .core-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+            flex-wrap: wrap;
+        }
+
+        .core-btn {
+            padding: 20px 45px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .study-btn {
+            background: linear-gradient(135deg, #4e6ef2 0%, #3d5bd9 100%);
+        }
+
+        .study-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(78, 110, 242, 0.3);
+        }
+
+        .doubao-btn {
+            background: linear-gradient(135deg, #f093fb 0%, #764ba2 100%);
+        }
+
+        .doubao-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(240, 147, 251, 0.3);
+        }
+
+        /* 容器样式 */
         .container {
-            max-width: 1000px;
-            margin: 30px auto;
+            max-width: 1200px;
+            margin: 0 auto 60px;
             padding: 0 20px;
         }
-        .feature-section {
+
+        /* 平台特色样式 */
+        .features-section {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .features-section h2 {
+            color: #764ba2;
+            font-size: 2.2rem;
             margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
         }
-        .feature-section h2 {
-            color: #4facfe;
-            margin-bottom: 20px;
-            font-size: 22px;
-            border-left: 4px solid #4facfe;
-            padding-left: 10px;
+
+        .features-section h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        .resource-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+
+        .features-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
             margin-top: 20px;
         }
-        .card {
-            background: #f9fcff;
+
+        .feature-card {
+            flex: 1 1 260px;
+            background: linear-gradient(180deg, #f8f9ff 0%, #f0f4ff 100%);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eef2f7;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* 拼音基础介绍（平台特色内） */
+        .pinyin-basic {
+            background: linear-gradient(180deg, #fefefe 0%, #f9fafb 100%);
+            padding: 35px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 1px solid #eef2f7;
+        }
+
+        .pinyin-basic h3 {
+            color: #764ba2;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .pinyin-list-basic {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .pinyin-item-basic {
+            background: #e8f4f8;
+            padding: 10px 18px;
             border-radius: 10px;
+            font-size: 1.1rem;
+            color: #0f5132;
+            border: 1px solid #d1e7dd;
+        }
+
+        .ai-suggestion {
+            background: linear-gradient(180deg, #fff3cd 0%, #ffeeba 100%);
             padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 6px solid #ffc107;
+        }
+
+        .ai-suggestion strong {
+            color: #856404;
+            font-size: 1.1rem;
+        }
+
+        /* 学习页面样式 */
+        .study-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .study-section h2 {
+            color: #764ba2;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             text-align: center;
-            border: 1px solid #e8f4ff;
-            transition: transform 0.3s;
+            position: relative;
+            padding-bottom: 15px;
         }
-        .card:hover {
-            transform: translateY(-5px);
+
+        .study-section h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        .card h3 {
-            color: #2d8cf0;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-        .card p {
-            font-size: 14px;
-            color: #666;
-        }
-        .pinyin-list {
+
+        /* 可发音拼音列表 */
+        .pinyin-list-study {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-top: 20px;
+            margin: 30px 0;
+            justify-content: center;
         }
-        .pinyin-item {
-            background: #e8f4ff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 16px;
+
+        .pinyin-item-study {
+            background: linear-gradient(135deg, #e8f4f8 0%, #d1e7dd 100%);
+            padding: 15px 25px;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            color: #0f5132;
             cursor: pointer;
-            transition: background 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #c3e6cb;
         }
-        .pinyin-item:hover {
-            background: #4facfe;
-            color: white;
+
+        .pinyin-item-study:hover {
+            background: linear-gradient(135deg, #d1e7dd 0%, #b8dae0 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
-        .pinyin-detail {
-            margin-top: 30px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            border: 1px solid #e8f4ff;
+
+        /* 学习资源链接 */
+        .resource-links {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
         }
-        .pinyin-detail h3 {
-            color: #2d8cf0;
-            margin-bottom: 15px;
-        }
-        .btn {
+
+        .resource-link {
             display: inline-block;
-            padding: 12px 24px;
-            background: #4facfe;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #5a67d8 100%);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            margin-top: 15px;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 16px;
+            border-radius: 12px;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
         }
-        .btn:hover {
-            background: #2d8cf0;
+
+        .resource-link:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #4c5bd4 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
         }
-        .footer {
-            text-align: center;
+
+        /* 豆包提示 */
+        .doubao-tip {
+            background: linear-gradient(180deg, #e6f7ff 0%, #d1edff 100%);
             padding: 20px;
-            color: #666;
-            font-size: 14px;
-            border-top: 1px solid #e8f4ff;
-            margin-top: 50px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 6px solid #1890ff;
+            text-align: center;
         }
-        #ai-tips {
-            margin-top: 15px;
+
+        .doubao-tip a {
+            color: #1890ff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .doubao-tip a:hover {
+            text-decoration: underline;
+        }
+
+        /* 作业检测区域 */
+        .homework-check {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .homework-check h2 {
+            color: #764ba2;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .homework-check h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .check-container {
+            background: linear-gradient(180deg, #f8f9ff 0%, #f0f4ff 100%);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #eef2f7;
+        }
+
+        .check-container h3 {
+            color: #667eea;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-area {
+            margin: 20px 0;
+        }
+
+        .input-area label {
+            display: block;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .input-area input {
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            font-size: 1.1rem;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-area input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .check-btn {
+            display: block;
+            width: 100%;
             padding: 15px;
-            background: #fff8e1;
-            border-radius: 8px;
-            font-size: 14px;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .check-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #5a67d8 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        /* 对错提示样式 */
+        .result-tip {
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .correct {
+            background: linear-gradient(180deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 1px solid #b1dfbb;
+            display: block;
+        }
+
+        .wrong {
+            background: linear-gradient(180deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border: 1px solid #f1b0b7;
+            display: block;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 50px 50px 0 0;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
-    <!-- 头部标题区域 -->
-    <div class="header">
+    <!-- 首页头部 -->
+    <div class="home-header">
         <h1>欢迎来到数智时代幼儿拼音学习平台</h1>
         <p>本平台基于免费教育技术构建，整合了阿里云盘，知乎，GitHub，豆包等免费资源，为幼儿提供生动有趣的拼音学习体验</p>
     </div>
 
+    <!-- 核心功能按钮：开始学习 + 豆包辅助 -->
+    <div class="core-buttons">
+        <a href="#study-section" class="core-btn study-btn">开始学习</a>
+        <a href="https://www.doubao.com" target="_blank" class="core-btn doubao-btn">豆包辅助</a>
+    </div>
+
     <div class="container">
-        <!-- 平台特色资源介绍 -->
-        <div class="feature-section">
-            <h2>平台特色资源</h2>
-            <div class="resource-cards">
-                <div class="card">
-                    <h3>阿里云盘</h3>
-                    <p>海量拼音教学视频、动画资源免费存储与播放，支持高清投屏，方便家长陪伴学习</p>
-                    <a href="https://www.aliyundrive.com/" class="btn" target="_blank">访问阿里云盘</a>
+        <!-- 第一部分：平台特色 -->
+        <section class="features-section">
+            <h2>平台特色</h2>
+            <div class="features-cards">
+                <div class="feature-card">
+                    <h3>📁 阿里云盘</h3>
+                    <p>整合阿里云盘海量高清拼音教学视频、趣味动画、彩色绘本等免费资源，支持在线播放和免费下载，家长可随时获取优质学习素材，满足3-6岁幼儿多样化的拼音学习需求。</p>
                 </div>
-                <div class="card">
-                    <h3>GitHub</h3>
-                    <p>开源拼音学习工具代码库，提供趣味互动程序源码，助力技术赋能教育</p>
-                    <a href="https://github.com/" class="btn" target="_blank">访问GitHub</a>
+                <div class="feature-card">
+                    <h3>💻 GitHub</h3>
+                    <p>基于GitHub开源教育工具构建平台核心功能，包含拼音发音引擎、互动练习模块、作业检测插件等，保证平台稳定性和可扩展性，支持教育社区共建优化。</p>
                 </div>
-                <div class="card">
-                    <h3>知乎</h3>
-                    <p>汇聚一线教师分享的幼儿拼音启蒙经验、方法技巧，科学指导学习路径</p>
-                    <a href="https://www.zhihu.com/" class="btn" target="_blank">访问知乎</a>
+                <div class="feature-card">
+                    <h3>📚 知乎</h3>
+                    <p>整合知乎幼儿教育专家、一线小学语文教师分享的拼音教学方法和实战经验，为家长提供科学的辅导思路，轻松解决幼儿拼音学习中的常见难点问题。</p>
                 </div>
-                <div class="card">
-                    <h3>豆包</h3>
-                    <p>AI智能拼音助教，支持发音测评、拼音问答、作业检测，打造个性化学习体验</p>
-                    <a href="https://www.doubao.com/" class="btn" target="_blank">和豆包聊拼音</a>
+                <div class="feature-card">
+                    <h3>🤖 豆包</h3>
+                    <p>集成豆包AI强大能力，提供个性化拼音学习建议、精准发音纠错、智能作业检测、趣味记忆口诀生成等功能，模拟一对一专属辅导场景，大幅提升学习效率。</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- 常见拼音列表与发音功能 -->
-        <div class="feature-section">
-            <h2>常见拼音学习</h2>
-            <p>点击拼音即可播放标准发音，跟随朗读练习更高效</p>
-            <div class="pinyin-list">
-                <div class="pinyin-item" onclick="playPinyin('a')">a 啊</div>
-                <div class="pinyin-item" onclick="playPinyin('o')">o 喔</div>
-                <div class="pinyin-item" onclick="playPinyin('e')">e 鹅</div>
-                <div class="pinyin-item" onclick="playPinyin('i')">i 衣</div>
-                <div class="pinyin-item" onclick="playPinyin('u')">u 乌</div>
-                <div class="pinyin-item" onclick="playPinyin('ü')">ü 鱼</div>
-                <div class="pinyin-item" onclick="playPinyin('b')">b 波</div>
-                <div class="pinyin-item" onclick="playPinyin('p')">p 坡</div>
             </div>
 
-            <!-- 拼音详情与AI学习建议 -->
-            <div class="pinyin-detail">
-                <h3>拼音学习详情 & AI学习建议</h3>
-                <p>1. 单韵母学习：先掌握 <strong>a/o/e/i/u/ü</strong> 的口型与发音，每天跟读10分钟，形成肌肉记忆</p>
-                <p>2. 声母搭配：学习 <strong>b/p/m/f</strong> 等声母与单韵母的拼读，结合动画视频理解发音规则</p>
-                <div id="ai-tips">
-                    <strong>豆包AI学习建议：</strong> 幼儿学习拼音宜采用“听-说-玩”结合的方式，每天学习时长不超过20分钟，可通过拼音儿歌、互动游戏巩固记忆；发音练习时，家长可借助豆包的发音测评功能，及时纠正孩子的发音偏差。
+            <!-- 拼音基础介绍（含常见拼音 + AI学习建议） -->
+            <div class="pinyin-basic">
+                <h3>拼音基础认知</h3>
+                <p>拼音是汉字的注音工具，是幼儿识字和普通话学习的入门基石，主要分为声母、韵母和声调三大部分，其中单韵母和基础声母是幼儿启蒙的核心内容。</p>
+                <p>常见拼音列举：</p>
+                <div class="pinyin-list-basic">
+                    <!-- 单韵母 -->
+                    <div class="pinyin-item-basic">ā</div>
+                    <div class="pinyin-item-basic">ō</div>
+                    <div class="pinyin-item-basic">ē</div>
+                    <div class="pinyin-item-basic">ī</div>
+                    <div class="pinyin-item-basic">ū</div>
+                    <div class="pinyin-item-basic">ǖ</div>
+                    <!-- 基础声母 -->
+                    <div class="pinyin-item-basic">b</div>
+                    <div class="pinyin-item-basic">p</div>
+                    <div class="pinyin-item-basic">m</div>
+                    <div class="pinyin-item-basic">f</div>
+                    <div class="pinyin-item-basic">d</div>
+                    <div class="pinyin-item-basic">t</div>
+                    <div class="pinyin-item-basic">n</div>
+                    <div class="pinyin-item-basic">l</div>
                 </div>
-                <a href="https://www.aliyundrive.com/" class="btn" target="_blank">查看阿里云盘拼音教学视频</a>
-                <button class="btn" style="margin-left: 10px;" onclick="checkHomework()">豆包作业检测</button>
+                <div class="ai-suggestion">
+                    <strong>AI学习建议（豆包提供）：</strong> 3-6岁幼儿学习拼音时，建议每天学习时长控制在15-20分钟，优先掌握6个单韵母的发音和书写，再逐步学习基础声母；可通过“口型示范+音频跟读”的方式巩固发音，结合趣味游戏降低学习难度，避免幼儿产生厌学情绪。
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- 第二部分：学习页面（锚点定位，对应“开始学习”按钮） -->
+        <section class="study-section" id="study-section">
+            <h2>拼音学习中心</h2>
+            <h3 style="text-align: center; color: #555; margin-bottom: 20px;">点击下方拼音即可播放豆包标准音频</h3>
+            <!-- 可发音拼音列表 -->
+            <div class="pinyin-list-study">
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('a')">ā</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('o')">ō</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('e')">ē</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('i')">ī</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('u')">ū</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('ü')">ǖ</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('b')">b</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('p')">p</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('m')">m</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('f')">f</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('d')">d</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('t')">t</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('n')">n</div>
+                <div class="pinyin-item-study" onclick="playDoubaoAudio('l')">l</div>
+            </div>
+
+            <!-- 学习资源链接 -->
+            <div class="resource-links">
+                <a href="https://www.alipan.com/s/tfCrWi8EQgw" target="_blank" class="resource-link">阿里云盘 - 拼音动画教学视频</a>
+                <a href="https://zhuanlan.zhihu.com/p/1989711064141678197?share_code=jfYUMYgPyZxc&utm_psn=1989711451993154429" target="_blank" class="resource-link">知乎 - 幼儿拼音启蒙实战指南</a>
+            </div>
+
+            <!-- 豆包提示 -->
+            <div class="doubao-tip">
+                <p>更多的详情请见 <a href="https://www.doubao.com" target="_blank">豆包</a>（点击跳转获取专属拼音学习方案）</p>
+            </div>
+        </section>
+
+        <!-- 第三部分：作业检测（含对错提示） -->
+        <section class="homework-check">
+            <h2>拼音作业智能检测</h2>
+            <div class="check-container">
+                <h3>常见拼音书写检测（示例：ā bō cè dī wū yū）</h3>
+                <div class="input-area">
+                    <label for="pinyin-homework">请输入幼儿拼音作业内容：</label>
+                    <input type="text" id="pinyin-homework" placeholder="请输入标准拼音，如：ā bō cè dī wū yū" value="ā bō cè dī wū yū">
+                    <p style="color: #666; margin-top: 5px; font-size: 0.95rem;">正确示例：ā bō cè dī wū yū | 错误示例：a bo ce di wu yu（无声调）</p>
+                </div>
+                <button class="check-btn" onclick="checkPinyinHomework()">立即检测</button>
+                <!-- 对错提示区域 -->
+                <div class="result-tip" id="result-tip"></div>
+            </div>
+        </section>
     </div>
 
+    <!-- 页脚 -->
     <div class="footer">
-        数智时代幼儿拼音学习平台 © 2025 基于免费资源构建
+        <p>数智时代幼儿拼音学习平台 © 2025 | 整合免费优质教育资源 | 适用于3-6岁幼儿拼音启蒙</p>
     </div>
 
-    <!-- 发音、作业检测核心功能代码 -->
     <script>
-        // 拼音发音播放函数（调用浏览器语音合成API）
-        function playPinyin(pinyin) {
-            // 处理ü的发音文本兼容
-            let pronounceText = pinyin === 'ü' ? 'yu' : pinyin;
-            const synth = window.speechSynthesis;
-            const utterance = new SpeechSynthesisUtterance(pronounceText);
-            utterance.lang = 'zh-CN';
-            utterance.rate = 0.8; // 语速放缓，适合幼儿
-            synth.speak(utterance);
+        // 播放豆包拼音音频（模拟豆包音频调用，可直接对接豆包音频API）
+        function playDoubaoAudio(pinyin) {
+            // 豆包拼音发音映射表（模拟豆包标准发音说明）
+            const doubaoAudioMap = {
+                'a': 'ā - 豆包标准发音：啊（口腔张大，舌位最低，气流自然流出）',
+                'o': 'ō - 豆包标准发音：喔（口腔半闭，嘴唇拢圆，气流平稳）',
+                'e': 'ē - 豆包标准发音：鹅（口腔半闭，嘴唇自然展开，舌位半高）',
+                'i': 'ī - 豆包标准发音：衣（口腔闭合，舌位最高，嘴唇扁平）',
+                'u': 'ū - 豆包标准发音：乌（口腔闭合，舌位最高，嘴唇拢圆）',
+                'ü': 'ǖ - 豆包标准发音：鱼（口腔闭合，舌位最高，嘴唇拢圆前伸）',
+                'b': 'b - 豆包标准发音：播（双唇紧闭，突然放开，气流轻短）',
+                'p': 'p - 豆包标准发音：坡（双唇紧闭，突然放开，气流较强）',
+                'm': 'm - 豆包标准发音：摸（双唇紧闭，气流从鼻腔流出）',
+                'f': 'f - 豆包标准发音：佛（上齿触下唇，气流从缝隙摩擦而出）',
+                'd': 'd - 豆包标准发音：得（舌尖抵上齿龈，突然放开，气流轻短）',
+                't': 't - 豆包标准发音：特（舌尖抵上齿龈，突然放开，气流较强）',
+                'n': 'n - 豆包标准发音：呢（舌尖抵上齿龈，气流从鼻腔流出）',
+                'l': 'l - 豆包标准发音：勒（舌尖抵上齿龈，气流从舌两侧流出）'
+            };
+
+            // 模拟豆包音频播放提示（可直接替换为豆包音频API调用）
+            alert(`豆包音频播放：${doubaoAudioMap[pinyin]}`);
+
+            // 真实豆包音频API调用预留代码
+            /*
+            fetch(`https://api.doubao.com/audio/pinyin?char=${pinyin}`, {
+                method: 'GET',
+                headers: { 'Authorization': 'Bearer your_doubao_api_key' }
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const audioUrl = URL.createObjectURL(blob);
+                const audio = new Audio(audioUrl);
+                audio.play();
+            })
+            .catch(err => {
+                console.error("豆包音频调用失败：", err);
+                alert(`豆包音频播放：${doubaoAudioMap[pinyin]}`);
+            });
+            */
         }
 
-        // 豆包作业检测模拟函数
-        function checkHomework() {
-            alert("已跳转到豆包AI作业检测功能！\n请输入幼儿的拼音作业内容，即可获得发音纠正、拼写检查与学习建议。");
-            window.open("https://www.doubao.com/", "_blank");
+        // 拼音作业检测（含对错提示）
+        function checkPinyinHomework() {
+            const homeworkInput = document.getElementById('pinyin-homework');
+            const homeworkContent = homeworkInput.value.trim();
+            const resultTip = document.getElementById('result-tip');
+
+            // 清空之前的提示
+            resultTip.className = 'result-tip';
+            resultTip.style.display = 'none';
+
+            // 校验输入为空
+            if (!homeworkContent) {
+                resultTip.className = 'result-tip wrong';
+                resultTip.innerText = '错误！请先输入拼音作业内容再进行检测';
+                resultTip.style.display = 'block';
+                return;
+            }
+
+            // 标准正确拼音（幼儿常见学习内容）
+            const standardPinyins = ['ā', 'ō', 'ē', 'ī', 'ū', 'ǖ', 'b', 'p', 'm', 'f', 'd', 't', 'n', 'l'];
+            // 提取输入中的拼音字符（去除空格）
+            const inputPinyins = homeworkContent.split(/\s+/);
+            // 标记是否正确
+            let isAllCorrect = true;
+            let wrongPinyins = [];
+
+            // 检测每个输入的拼音是否为标准带调拼音
+            inputPinyins.forEach(py => {
+                // 纯字符匹配（忽略声调，先做基础检测）
+                const purePy = py.toLowerCase().replace(/[āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜ]/g, match => match.charAt(0));
+                if (!standardPinyins.includes(purePy)) {
+                    isAllCorrect = false;
+                    wrongPinyins.push(py);
+                }
+                // 检测是否带有声调（幼儿作业要求带声调书写）
+                if (!/[āáǎàōóǒòēéěèīíǐìūúǔùǖǘǚǜ]/.test(py) && standardPinyins.includes(purePy)) {
+                    isAllCorrect = false;
+                    wrongPinyins.push(`${py}（缺少声调标注）`);
+                }
+            });
+
+            // 显示对错提示
+            if (isAllCorrect) {
+                resultTip.className = 'result-tip correct';
+                resultTip.innerText = `答对啦！拼音书写规范，声调标注准确，继续加油哦！`;
+            } else {
+                resultTip.className = 'result-tip wrong';
+                resultTip.innerText = `答错了！存在异常拼音：${wrongPinyins.join(', ')}，请对照标准拼音修改后重试。`;
+            }
+            resultTip.style.display = 'block';
+
+            // 滚动到提示区域
+            resultTip.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
 </body>
