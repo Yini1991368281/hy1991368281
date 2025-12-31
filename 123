@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幼儿拼音学习乐园</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #f9f0e8;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff6b81;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .link-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            color: white;
+            transition: all 0.3s;
+        }
+        .pinyin-btn {
+            background-color: #48dbfb;
+        }
+        .doubao-btn {
+            background-color: #ff9f43;
+        }
+        .link-btn:hover {
+            transform: scale(1.03);
+            opacity: 0.9;
+        }
+        .tips {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>幼儿拼音学习乐园</h1>
+        <!-- 宝宝巴士拼音学习链接 -->
+        <a href="https://www.babybus.com/zh/learning/pinyin.html" class="link-btn pinyin-btn" target="_blank">
+            进入拼音学习专区
+        </a>
+        <!-- 豆包聊天入口 -->
+        <a href="https://www.doubao.com" class="link-btn doubao-btn" target="_blank">
+            和豆包聊拼音
+        </a>
+        <p class="tips">点击按钮即可跳转，适合小朋友学习使用哦~</p>
+    </div>
+</body>
+</html>
