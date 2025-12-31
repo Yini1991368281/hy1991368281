@@ -3,72 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>幼儿拼音学习乐园</title>
+    <title>数智时代幼儿拼音学习平台</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
         }
         body {
-            font-family: "Microsoft YaHei", sans-serif;
-            background-color: #f9f0e8;
-            text-align: center;
-            padding: 50px 20px;
+            background-color: #f8f9fa;
+            color: #333;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #ff6b81;
-            margin-bottom: 30px;
-            font-size: 28px;
-        }
-        .link-btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 18px;
+        /* 头部样式 */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            transition: all 0.3s;
+            padding: 60px 20px;
+            text-align: center;
         }
-        .pinyin-btn {
-            background-color: #48dbfb;
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
         }
-        .doubao-btn {
-            background-color: #ff9f43;
-        }
-        .link-btn:hover {
-            transform: scale(1.03);
+        .header p {
+            font-size: 1.1rem;
             opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .tips {
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* 平台特色样式 */
+        .features {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .features h2 {
+            color: #764ba2;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .feature-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             margin-top: 20px;
-            color: #666;
-            font-size: 14px;
+        }
+        .card {
+            flex: 1 1 250px;
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .card p {
+            line-height: 1.6;
+            color: #555;
+        }
+        /* 拼音学习样式 */
+        .pinyin-learning {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .pinyin-learning h2 {
+            color: #764ba2;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            border-left: 5px solid #667eea;
+            padding-left: 15px;
+        }
+        .pinyin-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .pinyin-item {
+            background: #e8f4f8;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .pinyin-item:hover {
+            background: #d1e7dd;
+        }
+        /* 拼音详情样式 */
+        .pinyin-detail {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .pinyin-detail h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .ai-suggestion {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 5px solid #ffc107;
+        }
+        .resource-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: background 0.3s ease;
+        }
+        .resource-link:hover {
+            background: #5a67d8;
+        }
+        /* 代码区域样式 */
+        .code-section {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        .code-section pre {
+            font-family: "Consolas", monospace;
+            line-height: 1.6;
+        }
+        /* 页脚样式 */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>幼儿拼音学习乐园</h1>
-        <!-- 宝宝巴士拼音学习链接 -->
-        <a href="https://www.babybus.com/zh/learning/pinyin.html" class="link-btn pinyin-btn" target="_blank">
-            进入拼音学习专区
-        </a>
-        <!-- 豆包聊天入口 -->
-        <a href="https://www.doubao.com" class="link-btn doubao-btn" target="_blank">
-            和豆包聊拼音
-        </a>
-        <p class="tips">点击按钮即可跳转，适合小朋友学习使用哦~</p>
+    <!-- 头部区域 -->
+    <div class="header">
+        <h1>欢迎来到数智时代幼儿拼音学习平台</h1>
+        <p>本平台基于免费教育技术构建，整合了阿里云盘，知乎，GitHub，豆包等免费资源，为幼儿提供生动有趣的拼音学习体验</p>
     </div>
+
+    <div class="container">
+        <!-- 平台特色区域 -->
+        <section class="features">
+            <h2>平台特色</h2>
+            <div class="feature-card">
+                <div class="card">
+                    <h3>阿里云盘资源整合</h3>
+                    <p>整合阿里云盘海量拼音学习视频、动画、绘本等资源，支持高清在线播放和免费下载，家长可随时获取优质学习素材，满足幼儿多样化学习需求。</p>
+                </div>
+                <div class="card">
+                    <h3>GitHub开源技术支撑</h3>
+                    <p>基于GitHub开源教育工具构建平台核心功能，包含拼音发音引擎、互动练习模块等，保证平台稳定性和可扩展性，同时支持社区共建优化。</p>
+                </div>
+                <div class="card">
+                    <h3>知乎优质学习经验</h3>
+                    <p>整合知乎上幼儿教育专家、一线教师分享的拼音教学方法和经验，为家长提供科学的辅导思路，解决拼音学习中的常见问题。</p>
+                </div>
+                <div class="card">
+                    <h3>豆包AI智能辅助</h3>
+                    <p>集成豆包AI能力，提供个性化拼音学习建议、发音纠错、智能作业检测等功能，模拟一对一辅导场景，提升学习效率。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 拼音学习区域 -->
+        <section class="pinyin-learning">
+            <h2>拼音学习中心</h2>
+            <div class="pinyin-list">
+                <div class="pinyin-item" onclick="playPinyin('a')">ā</div>
+                <div class="pinyin-item" onclick="playPinyin('o')">ō</div>
+                <div class="pinyin-item" onclick="playPinyin('e')">ē</div>
+                <div class="pinyin-item" onclick="playPinyin('i')">ī</div>
+                <div class="pinyin-item" onclick="playPinyin('u')">ū</div>
+                <div class="pinyin-item" onclick="playPinyin('ü')">ǖ</div>
+                <div class="pinyin-item" onclick="playPinyin('b')">b</div>
+                <div class="pinyin-item" onclick="playPinyin('p')">p</div>
+                <div class="pinyin-item" onclick="playPinyin('m')">m</div>
+                <div class="pinyin-item" onclick="playPinyin('f')">f</div>
+                <div class="pinyin-item" onclick="playPinyin('d')">d</div>
+                <div class="pinyin-item" onclick="playPinyin('t')">t</div>
+            </div>
+
+            <div class="pinyin-detail">
+                <h3>拼音学习详情（以单韵母为例）</h3>
+                <p>单韵母是拼音的基础，包含 a、o、e、i、u、ü 六个核心韵母，是幼儿拼音启蒙的第一步。</p>
+                
+                <div class="ai-suggestion">
+                    <strong>AI学习建议：</strong> 对于3-6岁幼儿，建议每天学习1-2个单韵母，结合动画视频和互动游戏加深记忆；发音练习时可通过口型示范+AI发音纠错，确保发音标准；学习周期建议1-2周，完成单韵母基础学习后再过渡到声母组合练习。
+                </div>
+
+                <div>
+                    <h4>学习资源：</h4>
+                    <a href="https://www.aliyundrive.com/s/xxxx" class="resource-link">阿里云盘-单韵母动画视频</a>
+                    <a href="https://www.zhihu.com/topic/xxxx" class="resource-link">知乎-幼儿拼音启蒙方法</a>
+                    <a href="https://github.com/xxxx/pinyin-learning" class="resource-link">GitHub-拼音互动练习源码</a>
+                </div>
+
+                <div>
+                    <h4>点击拼音发音：</h4>
+                    <p>选择上方拼音按钮即可播放标准发音，帮助幼儿建立正确的语音认知。</p>
+                </div>
+            </div>
+
+            <!-- 豆包辅助-作业检测代码示例 -->
+            <h3>豆包AI辅助 - 拼音作业检测代码示例</h3>
+            <div class="code-section">
+                <pre>
+# 拼音作业检测核心代码（Python）
+# 集成豆包API实现拼音发音和书写检测
+import requests
+
+# 豆包API配置（示例）
+DOUBAO_API_KEY = "your_api_key"
+DOUBAO_API_URL = "https://api.doubao.com/pinyin/check"
+
+def check_pinyin_homework(homework_content):
+    """
+    检测幼儿拼音作业：包含发音准确性、书写规范性、声调正确性
+    :param homework_content: 作业内容（如拼音书写文本/音频转写）
+    :return: 检测结果和AI辅导建议
+    """
+    headers = {
+        "Authorization": f"Bearer {DOUBAO_API_KEY}",
+        "Content-Type": "application/json"
+    }
+    data = {
+        "content": homework_content,
+        "type": "children_pinyin",  # 幼儿拼音专项检测
+        "age_group": "3-6"  # 适配3-6岁幼儿认知水平
+    }
+    
+    response = requests.post(DOUBAO_API_URL, json=data, headers=headers)
+    result = response.json()
+    
+    # 解析检测结果
+    if result["code"] == 200:
+        check_result = {
+            "pronunciation_error": result["data"]["pronunciation_error"],  # 发音错误
+            "tone_error": result["data"]["tone_error"],  # 声调错误
+            "writing_error": result["data"]["writing_error"],  # 书写错误
+            "ai_suggestion": result["data"]["ai_suggestion"]  # AI辅导建议
+        }
+        return check_result
+    else:
+        return {"error": "检测失败，请重试"}
+
+# 示例调用
+if __name__ == "__main__":
+    # 幼儿作业示例：书写的拼音文本
+    child_homework = "bō lè ǘ"
+    result = check_pinyin_homework(child_homework)
+    print("拼音作业检测结果：")
+    print(f"发音错误：{result.get('pronunciation_error', '无')}")
+    print(f"声调错误：{result.get('tone_error', '无')}")
+    print(f"书写错误：{result.get('writing_error', '无')}")
+    print(f"AI辅导建议：{result.get('ai_suggestion', '无')}")
+                </pre>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>数智时代幼儿拼音学习平台 © 2025 - 基于免费教育资源构建 | 适用于3-6岁幼儿拼音启蒙</p>
+    </div>
+
+    <script>
+        // 拼音发音功能（模拟）
+        function playPinyin(pinyin) {
+            // 实际项目中可集成语音合成API（如阿里云语音、百度语音等）
+            const pronunciationMap = {
+                'a': 'ā 的发音：啊',
+                'o': 'ō 的发音：喔',
+                'e': 'ē 的发音：鹅',
+                'i': 'ī 的发音：衣',
+                'u': 'ū 的发音：乌',
+                'ü': 'ǖ 的发音：鱼',
+                'b': 'b 的发音：播',
+                'p': 'p 的发音：坡',
+                'm': 'm 的发音：摸',
+                'f': 'f 的发音：佛',
+                'd': 'd 的发音：得',
+                't': 't 的发音：特'
+            };
+            
+            // 模拟发音播放
+            alert(`播放发音：${pronunciationMap[pinyin]}`);
+            
+            // 实际语音播放示例（需结合语音API）
+            /*
+            const audio = new Audio(`https://your-audio-server.com/pinyin/${pinyin}.mp3`);
+            audio.play().catch(err => console.log("播放失败：", err));
+            */
+        }
+    </script>
 </body>
 </html>
